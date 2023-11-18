@@ -53,14 +53,15 @@
                 android:textColor="@color/primaryColor">
             </TextView>
 
-            <TextView
+            <EditText
                 android:id="@+id/weightEntryText"
+                android:paddingLeft="10dp"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:textAlignment="textStart"
                 android:background="@color/entryColor"
                 android:backgroundTint="@color/entryColor">
-            </TextView>
+            </EditText>
 
             <LinearLayout
                 android:id="@+id/weightButtonsLayout"
@@ -69,25 +70,26 @@
                 android:orientation="horizontal"
                 android:gravity="center">
 
-                <androidx.appcompat.widget.AppCompatButton
+                <ToggleButton
                     android:id="@+id/poundsButton"
                     android:layout_width="110dp"
                     android:layout_height="50dp"
-                    android:text="Pounds"
+                    android:textOn="Pounds"
                     android:textColor="@color/white"
+                    android:checked="true"
                     android:backgroundTint="@color/primaryColor"
                     android:textSize="15dp">
-                </androidx.appcompat.widget.AppCompatButton>
+                </ToggleButton>
 
-                <androidx.appcompat.widget.AppCompatButton
+                <ToggleButton
                     android:id="@+id/kilogramsButton"
                     android:layout_width="110dp"
                     android:layout_height="50dp"
                     android:backgroundTint="@color/primaryColor"
-                    android:text="Kilograms"
+                    android:textOn="Kilograms"
                     android:textColor="@color/white"
                     android:textSize="15dp">
-                </androidx.appcompat.widget.AppCompatButton>
+                </ToggleButton>
 
             </LinearLayout>
 
@@ -123,14 +125,15 @@
                 android:textColor="@color/primaryColor">
             </TextView>
 
-            <TextView
+            <EditText
                 android:id="@+id/heightEntryText"
+                android:paddingLeft="10dp"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:textAlignment="textStart"
                 android:background="@color/entryColor"
                 android:backgroundTint="@color/entryColor">
-            </TextView>
+            </EditText>
 
             <LinearLayout
                 android:id="@+id/heightButtonsLayout"
@@ -139,25 +142,26 @@
                 android:orientation="horizontal"
                 android:gravity="center">
 
-                <androidx.appcompat.widget.AppCompatButton
+                <ToggleButton
                     android:id="@+id/inchesButton"
                     android:layout_width="110dp"
                     android:layout_height="50dp"
-                    android:text="Inches"
+                    android:textOn="Inches"
                     android:textColor="@color/white"
+                    android:checked="true"
                     android:backgroundTint="@color/primaryColor"
                     android:textSize="15dp">
-                </androidx.appcompat.widget.AppCompatButton>
+                </ToggleButton>
 
-                <androidx.appcompat.widget.AppCompatButton
+                <ToggleButton
                     android:id="@+id/centimetersButton"
                     android:layout_width="140dp"
                     android:layout_height="50dp"
                     android:backgroundTint="@color/primaryColor"
-                    android:text="Centimeters"
+                    android:textOn="Centimeters"
                     android:textColor="@color/white"
                     android:textSize="15dp">
-                </androidx.appcompat.widget.AppCompatButton>
+                </ToggleButton>
 
             </LinearLayout>
 

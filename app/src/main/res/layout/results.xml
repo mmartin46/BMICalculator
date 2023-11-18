@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ResultsActivity">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:background="@color/primaryColor"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/bmiBackButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="@color/primaryColor"
+            android:src="@drawable/back_button_img"
+            android:tooltipText=""
+            tools:ignore="SpeakableTextPresentCheck">
+        </ImageButton>
+
+        <TextView
+            android:id="@+id/bmiHeaderString"
+            android:paddingEnd="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Your BMI Results"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingTop="70sp"
+            android:text="Your current BMI is"
+            android:gravity="center"
+            android:textSize="18dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/userBMI"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Test"
+            android:paddingBottom="20dp"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/userBMISlider"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/hello_blank_fragment"
+            android:padding="100dp"
+            android:valueFrom="0"
+            android:valueTo="50"
+            app:haloColor="@color/primaryColor"
+            app:thumbTint="@color/primaryColor"
+            app:tickVisible="true">
+        </com.google.android.material.slider.Slider>
+
+        <TextView
+            android:id="@+id/userBMIDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            android:textColor="@color/primaryColor"
+            android:gravity="center">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/bmiResultTitle"
+            android:text="Result"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </LinearLayout>
+
+</LinearLayout>
