@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/primaryColor"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/bmi_calculator"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/weightLayout"
+        android:paddingTop="60dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/weightEntryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/weightLabel"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:text="Weight"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/primaryColor">
+            </TextView>
+
+            <TextView
+                android:id="@+id/weightEntryText"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:textAlignment="textStart"
+                android:background="@color/entryColor"
+                android:backgroundTint="@color/entryColor">
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/weightButtonsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/poundsButton"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:text="Pounds"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primaryColor"
+                    android:textSize="15dp">
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kilogramsButton"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/primaryColor"
+                    android:text="Kilograms"
+                    android:textColor="@color/white"
+                    android:textSize="15dp">
+                </androidx.appcompat.widget.AppCompatButton>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/heightLayout"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/heightEntryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/heightLabel"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:text="Height"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/primaryColor">
+            </TextView>
+
+            <TextView
+                android:id="@+id/heightEntryText"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:textAlignment="textStart"
+                android:background="@color/entryColor"
+                android:backgroundTint="@color/entryColor">
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/heightButtonsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/inchesButton"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:text="Inches"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primaryColor"
+                    android:textSize="15dp">
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/centimetersButton"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/primaryColor"
+                    android:text="Centimeters"
+                    android:textColor="@color/white"
+                    android:textSize="15dp">
+                </androidx.appcompat.widget.AppCompatButton>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/resultsButton"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:text="RESULTS"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/primaryColor">
+    </androidx.appcompat.widget.AppCompatButton>
+
+
+</LinearLayout>
