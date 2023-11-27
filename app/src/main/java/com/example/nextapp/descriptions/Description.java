@@ -19,6 +19,11 @@ public class Description {
         return (currentBMI > 18.5) && (currentBMI < 25.0);
     }
 
+    /**
+     * Returns the title based on the BMI
+     * @param currentBMI
+     * @return returns the title as a string
+     */
     public static String getBMITitle(double currentBMI) {
         double bmiMassWeightDeficient = 16.0;
         double bmiWeightDeficient = 18.5;
@@ -45,13 +50,42 @@ public class Description {
         return OBESITY_STAGE_3;
     }
 
+    /**
+     * Returns a description based off of the bmi.
+     * @param currentBMI
+     * @return a description for the BMI as a string
+     */
+
     public static String getBMIDescription(double currentBMI) {
         String result = getBMITitle(currentBMI);
 
-        if (result.equals("Exceptionally Underweight")) {
-
+        if (result.equals(EXCEPT_UNDERWEIGHT)) {
+            return Details.EXCEPT_UNDERWEIGHT;
+        } else if (result.equals(UNDER_WEIGHT)) {
+            return Details.UNDER_WEIGHT;
+        } else if (result.equals(HEALTHY_WEIGHT)) {
+            return Details.HEALTHY_WEIGHT;
+        } else if (result.equals(OVER_WEIGHT)) {
+            return Details.OVER_WEIGHT;
+        } else if (result.equals(OBESITY_STAGE_1)) {
+            return Details.OBESITY_STAGE_1;
+        } else if (result.equals(OBESITY_STAGE_2)) {
+            return Details.OBESITY_STAGE_2;
         }
-        // FIXME: NOT FINISHED
-        return "";
+        return Details.OBESITY_STAGE_3;
+    }
+
+    /**
+     * Descriptions based off the BMI.
+     */
+    private static class Details
+    {
+        public static final String EXCEPT_UNDERWEIGHT = "Your weight is exceptionally low. Consider medical advice.";
+        public static final String UNDER_WEIGHT = "You are considered underweight, consider increasing your calorie intake";
+        public static final String HEALTHY_WEIGHT = "You are considered to have a healthy weight, consider keeping a balanced diet and stay active.";
+        public static final String OVER_WEIGHT = "You are considered overweight. Consider lowering your calorie intake.";
+        public static final String OBESITY_STAGE_1 = "You're weight is at an obesity of stage 1, consider a healthier lifestyle.";
+        public static final String OBESITY_STAGE_2 = "You're weight is at an obesity of stage 2, consider medical advice.";
+        public static final String OBESITY_STAGE_3 = "You're weight is at an obesity of stage 2, consider medical advice.";
     }
 }

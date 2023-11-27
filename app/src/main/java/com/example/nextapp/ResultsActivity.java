@@ -21,6 +21,7 @@ public class ResultsActivity extends AppCompatActivity {
     private Slider bmiSlider;
     private ImageButton backButton;
     private TextView bmiResultTitle;
+    private TextView bmiResultDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class ResultsActivity extends AppCompatActivity {
         bmiSlider = findViewById(R.id.userBMISlider);
         backButton = findViewById(R.id.bmiBackButton);
         bmiResultTitle = findViewById(R.id.bmiResultTitle);
+        bmiResultDescription = findViewById(R.id.bmiResultDescription);
         initializeBackButton();
     }
 
@@ -148,7 +150,7 @@ public class ResultsActivity extends AppCompatActivity {
 
         if ((twoDecimalBMI == "0.00"))
         {
-            Toast.makeText(this, invalidResult(), Toast.LENGTH_LONG);
+            Toast.makeText(this, invalidResult(), Toast.LENGTH_LONG).show();
         }
 
         bmiResult.setText(twoDecimalBMI);

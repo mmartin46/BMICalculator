@@ -110,6 +110,15 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:id="@+id/bmiResultDescription"
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test Description"
+            android:gravity="center">
 
         </TextView>
 
