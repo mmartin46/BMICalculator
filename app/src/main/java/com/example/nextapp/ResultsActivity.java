@@ -57,11 +57,15 @@ public class ResultsActivity extends AppCompatActivity {
         initializeTextViews();
     }
 
+    /**
+     * Initializes all the buttons
+     */
     private void initializeButtons() {
         buttons = new HashMap<>();
         buttons.put(Category.BACK_BUTTON, findViewById(R.id.bmiBackButton));
         buttons.put(Category.SHARE_BUTTON, findViewById(R.id.bmiShareButton));
         initializeBackButton();
+        initializeShareButton();
     }
 
     /**
@@ -115,6 +119,18 @@ public class ResultsActivity extends AppCompatActivity {
     }
 
     /**
+     * Returns the message to use for sharing.
+     * @return
+     */
+    private String bmiForMessaging() {
+        String formattedBMI = String.format(".2f", bmiValue);
+
+        String bmiForText = "My BMI score results with a value of ";
+        bmiForText = bmiForText.concat(formattedBMI + "\nThis is the description it gave.\n\"" + Description.getBMIDescription(bmiValue) + "\"");
+        return bmiForText;
+    }
+
+    /**
      * Ensures when the share button is clicked
      * the user is able to send their information.
      */
@@ -122,7 +138,10 @@ public class ResultsActivity extends AppCompatActivity {
         buttons.get(Category.SHARE_BUTTON).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // FIXME: Share results via message, email, etc.
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, bmiForMessaging());
+                startActivity(Intent.createChooser(shareIntent, "Share your BMI Result via..."));
             }
         });
     }
