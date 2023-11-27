@@ -81,7 +81,7 @@ public class Description {
     private static class Details
     {
         public static final String EXCEPT_UNDERWEIGHT = "Your weight is exceptionally low. Consider medical advice.";
-        public static final String UNDER_WEIGHT = "You are considered underweight, consider increasing your calorie intake";
+        public static final String UNDER_WEIGHT = "You are considered underweight, consider increasing your calorie intake.";
         public static final String HEALTHY_WEIGHT = "You are considered to have a healthy weight, consider keeping a balanced diet and stay active.";
         public static final String OVER_WEIGHT = "You are considered overweight. Consider lowering your calorie intake.";
         public static final String OBESITY_STAGE_1 = "You're weight is at an obesity of stage 1, consider a healthier lifestyle.";

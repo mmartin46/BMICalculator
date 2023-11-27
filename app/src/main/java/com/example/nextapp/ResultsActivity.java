@@ -36,6 +36,7 @@ public class ResultsActivity extends AppCompatActivity {
         setBMIMessage();
         initializeBMISlider();
         setBMIResultTitle();
+        setBMIDescription();
     }
 
     /**
@@ -51,11 +52,15 @@ public class ResultsActivity extends AppCompatActivity {
         initializeBackButton();
     }
 
+    private void setBMIDescription() {
+        bmiResultDescription.setText(Description.getBMIDescription(bmiValue));
+    }
+
     /**
      * Sets the title for the BMI Result
      */
     private void setBMIResultTitle() {
-        bmiResultTitle.setText(Description.getBMITitle(bmiValue.doubleValue()));
+        bmiResultTitle.setText(Description.getBMITitle(bmiValue));
         setTextViewColor(bmiResultTitle);
     }
 
