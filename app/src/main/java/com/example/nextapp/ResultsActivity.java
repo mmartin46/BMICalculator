@@ -14,14 +14,25 @@ import android.widget.Toast;
 import com.example.nextapp.descriptions.Description;
 import com.google.android.material.slider.Slider;
 
+import java.util.HashMap;
+
+enum Category {
+    BACK_BUTTON,
+    SHARE_BUTTON,
+    TITLE,
+    DESCRIPTION,
+    RESULT
+}
+
 public class ResultsActivity extends AppCompatActivity {
 
     private Double bmiValue;
-    private TextView bmiResult;
     private Slider bmiSlider;
-    private ImageButton backButton;
-    private TextView bmiResultTitle;
-    private TextView bmiResultDescription;
+
+    private HashMap<Category, ImageButton> buttons;
+    private HashMap<Category, TextView> textViews;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,37 +42,51 @@ public class ResultsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         bmiValue = intent.getDoubleExtra("bmi_result", 0.0);
 
-
-        initializeButtons();
-        setBMIMessage();
-        initializeBMISlider();
-        setBMIResultTitle();
-        setBMIDescription();
+        initializeMembers();
     }
 
     /**
-     * Sets the buttons with their
+     * Sets the members with their
      * respective IDs.
      */
-    private void initializeButtons() {
-        bmiResult = findViewById(R.id.userBMI);
+    private void initializeMembers() {
         bmiSlider = findViewById(R.id.userBMISlider);
-        backButton = findViewById(R.id.bmiBackButton);
-        bmiResultTitle = findViewById(R.id.bmiResultTitle);
-        bmiResultDescription = findViewById(R.id.bmiResultDescription);
+
+        initializeButtons();
+        initializeBMISlider();
+        initializeTextViews();
+    }
+
+    private void initializeButtons() {
+        buttons = new HashMap<>();
+        buttons.put(Category.BACK_BUTTON, findViewById(R.id.bmiBackButton));
+        buttons.put(Category.SHARE_BUTTON, findViewById(R.id.bmiShareButton));
         initializeBackButton();
     }
 
+    /**
+     * Initializes the needed text views to enable editing.
+     */
+    private void initializeTextViews() {
+        textViews = new HashMap<>();
+        textViews.put(Category.TITLE, findViewById(R.id.bmiResultTitle));
+        textViews.put(Category.DESCRIPTION, findViewById(R.id.bmiResultDescription));
+        textViews.put(Category.RESULT, findViewById(R.id.userBMI));
+        setBMIResultTitle();
+        setBMIDescription();
+        setBMIMessage();
+    }
+
     private void setBMIDescription() {
-        bmiResultDescription.setText(Description.getBMIDescription(bmiValue));
+        textViews.get(Category.DESCRIPTION).setText(Description.getBMIDescription(bmiValue));
     }
 
     /**
      * Sets the title for the BMI Result
      */
     private void setBMIResultTitle() {
-        bmiResultTitle.setText(Description.getBMITitle(bmiValue));
-        setTextViewColor(bmiResultTitle);
+        textViews.get(Category.TITLE).setText(Description.getBMITitle(bmiValue));
+        setTextViewColor(textViews.get(Category.TITLE));
     }
 
 
@@ -80,11 +105,24 @@ public class ResultsActivity extends AppCompatActivity {
      * screen.
      */
     private void initializeBackButton() {
-        backButton.setOnClickListener(new View.OnClickListener() {
+        buttons.get(Category.BACK_BUTTON).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ResultsActivity.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+    /**
+     * Ensures when the share button is clicked
+     * the user is able to send their information.
+     */
+    private void initializeShareButton() {
+        buttons.get(Category.SHARE_BUTTON).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // FIXME: Share results via message, email, etc.
             }
         });
     }
@@ -158,6 +196,7 @@ public class ResultsActivity extends AppCompatActivity {
             Toast.makeText(this, invalidResult(), Toast.LENGTH_LONG).show();
         }
 
-        bmiResult.setText(twoDecimalBMI);
+        // Sets the result.
+        textViews.get(Category.RESULT).setText(twoDecimalBMI);
     }
 }

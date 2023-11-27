@@ -31,8 +31,8 @@
 
         <TextView
             android:id="@+id/bmiHeaderString"
-            android:paddingEnd="60dp"
-            android:layout_width="match_parent"
+            android:paddingHorizontal="50dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Your BMI Results"
             android:gravity="center"
@@ -41,6 +41,17 @@
             >
         </TextView>
 
+        <ImageButton
+            android:id="@+id/bmiShareButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/primaryColor"
+            android:src="@drawable/share_button_img"
+            android:tooltipText=""
+            tools:ignore="SpeakableTextPresentCheck">
+        </ImageButton>
     </LinearLayout>
 
 
